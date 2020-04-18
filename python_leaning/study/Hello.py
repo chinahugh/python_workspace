@@ -77,9 +77,7 @@
 #    count = count + 1
 # else:
 #    print (count, " 大于或等于 5")
-# import sys
-# print(sys.path)
-# print(dir(sys))
+
 # 打开一个文件
 # f = open("foo.txt", "w",encoding='utf-8')
 
@@ -100,15 +98,15 @@
 # f.close()
 
 # 打开一个文件
-f = open("study/foo.txt", "r",encoding='utf-8')
+# f = open("study/foo.txt", "r",encoding='utf-8')
 
-# str = f.readline()
-print(str)
-ls=f.readlines()
-print(ls)
+# # str = f.readline()
+# print(str)
+# ls=f.readlines()
+# print(ls)
 
-# 关闭打开的文件
-f.close()
+# # 关闭打开的文件
+# f.close()
 # ----------------------------------
 # a = 10
 # b = 20
@@ -137,3 +135,14 @@ f.close()
 #    print ("5 - 变量 a 和 b 都为 false，或其中一个变量为 false")
 # else:
 #    print ("5 - 变量 a 和 b 都为 true")
+
+class Sample:
+    def __enter__(self):
+        print("in__enter_")
+        return "Foo"
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("in __exit__")
+def get_sample():
+    return Sample()
+with get_sample() as sample:
+    print ("Sample: ", sample)
