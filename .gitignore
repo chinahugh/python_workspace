@@ -12,7 +12,8 @@ data/
 .vscode/
 */.idea/
 **/.idea/
-
+*.rar
+mooc/
 __pycache__/
 *.py[cod]
 *$py.class
